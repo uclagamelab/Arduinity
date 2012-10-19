@@ -1,0 +1,53 @@
+*.bmp
+*.BMP
+*.psd
+*.PSD
+*.tif
+*.TIF
+*.tiff
+*.TIFF
+*.pdf
+*.PDF
+*.ttf
+*.TTF
+*.ZIP
+*.zip
+*.rtf
+#Unity files
+*.cginc
+*.prefab
+*.unity
+*.unity3d
+*.shader
+*.asset
+*.GUISkin
+*.mat
+*.rendertexture
+*.physicmaterial
+*.flare:
+#3D tool files
+*.fbx
+*.FBX
+*.anim
+*.fbm
+*.exr
+*.otf
+*.max
+#Media files
+*.ogg
+*.ogv
+*.raw
+*.wav
+*.WAV
+*.wave
+*.MOV
+*.mov
+#visual studio files
+*.sln
+*.csproj
+*.unityproj
+#other stuff
+Library/
+Temp/
+*.pidb
+.DS_Store
