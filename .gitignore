@@ -19,7 +19,6 @@
 *.unity
 *.unity3d
 *.shader
-*.asset
 *.GUISkin
 *.mat
 *.rendertexture
