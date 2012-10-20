@@ -16,11 +16,9 @@
 #Unity files
 *.cginc
 *.prefab
-*.unity
 *.unity3d
 *.shader
 *.GUISkin
-*.mat
 *.rendertexture
 *.physicmaterial
 *.flare:
