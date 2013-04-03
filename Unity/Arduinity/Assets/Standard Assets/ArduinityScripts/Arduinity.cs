@@ -116,6 +116,10 @@ public class Arduinity : MonoBehaviour
                     string response = arduinoCommunicator.SendReceiveMessage("arduinity_dread " + i);
 
                     // read the last number in the response string
+                    /*int receivedPin = int.Parse(response.Substring(response.IndexOf(' ')+1,response.LastIndexOf(' ')));
+                    if(receivedPin != i) Debug.Log("Arduinity::LateUpdate(): recieved late message (" + response + ")");
+                    digitalPins[receivedPin] = int.Parse(response.Substring(response.LastIndexOf(' ') + 1));*/
+                    
                     digitalPins[i] = int.Parse(response.Substring(response.LastIndexOf(' ') + 1));
                 }
                 else if (digitalPinModes[i] == ArduinoDigitalPinMode.OUTPUT)
