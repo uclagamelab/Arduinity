@@ -5,13 +5,13 @@ WARNING: This code appears to be working with Leonardo Arduinos only. Work is be
 
 Need an Arudino to talk to Unity game engine? or Unity to speak with an Arduino? Arduinity is a flexible, lightweight set of Unity scripts and Arduino code.
 
-##Preamble
+## Preamble
 Arduinity is a UCLA Game Lab project that provides simple and easy to use communication between applications made with Unity 3d and Arduino hardware. Arduinity currently supports any USB equipped Arduino and version 3.5 of Unity 3d on the windows platform.
 
 This document will walk you through the process of running the Arduinity examples to communicate to your Arduino from a Unity application.
 
 
-##Features
+## Features
 Works with standard Arduino serial communication
 Unity reads and writes pin values to and from Arduino
 JS or C# examples included.
@@ -19,28 +19,28 @@ Multiple Arduino support
 Dynamically change pin modes on Arduino
 
 
-##Caveats
+## Caveats
 Windows only(for now).
 Windows COM port error when numbered greater than COM10, occasionally. See Troubleshooting section.
 It isn't our intention to break your hardware. This works for us, so we put it out for others to use. We don't take responsibility for what goes wrong with your hardware.
 Digital write from analog pins not yet supported.
 
 
-##Getting the files
+## Getting the files
 Arduinity is a group of Unity scripts and Arduino programs that are available for download from Github at https://github.com/uclagamelab/Arduinity. The download link is https://github.com/uclagamelab/Arduinity/archive/master.zip
 
 You need both the Arduino project files and the Unity project files. Unpack to a local directory.
 
 
-##Setup Arduino
+## Setup Arduino
 A simple Arduino program handles communication over serial from Unity. A USB cable must be attached to the computer running your Unity application for this to work. Open the ArudinitySerial.ino file in the Arduino software(available from http://www.arduino.cc/) and upload the program to your Arduino. This will overwrite any program currently residing on the Arduino.
 
 
-##Example Files
+## Example Files
 The example files are intended to show the various features supported by Arduinity, as well as demonstrate how the interface from Unity to Arduino functions. Running and tinkering with the examples is highly recommended.
 
 
-##First Example - Blink LED
+## First Example - Blink LED
 The first example, in a scene called BlinkLED, demonstrates the structure of the Arduinity interface and how to send a digital high signal to an Arduino pin from Unity. Open the scene in by double clicking the BlinkLED.unity file.
 
 To run this example, you need to make a simple circuit for your Arduino. This example is modeled on the Blink example which comes with the Arduino IDE, so it uses the same circuit. Attach an LED with the anode in pin 13 and the cathode in GND.
@@ -56,7 +56,7 @@ That same game object also has the second script controlling the action, the Bli
 The third script is located as a component on the LED game object in the project hierarchy. This script watches the value of pin 13 on the Arduinity component and switches the in-scene light on or off depending on whether the current value is 0 or 1.
 
 
-##Second Example - Fade LED
+## Second Example - Fade LED
 The second example, in a scene called FadeLED, demonstrates how to send a pulse width modulation(PWM) signal to the Arduino from Unity. This example is based on the Fade example found the Arduino IDE, but uses the same circuit as found in the Blink example.
 
 Open the FadeLED scene and press play, the same Arduino program as the last is used for this example. The LED should fade on and off rather than blink.
@@ -78,7 +78,7 @@ The ContinuousUpdate flag tells Arduinity whether to read and write values durin
 The SerialSpeed value must match the value specified in your Arduino program.
 
 
-##Third Example - Read Analog Voltage
+## Third Example - Read Analog Voltage
 The third example, in a scene called ReadAnalogVoltage, demonstrates how read an analog pin value from the Arduino to Unity. This example is based on the ReadAnalogVoltage example found in the Arduino IDE and uses the same circuit. The center pin of a potentiometer should be connected to pin A0, and the two ends of the pot to 5V and GND.
 
 Open the ReadAnalogVoltage scene and press the play button. Turning the potentiometer should change the orientation of the red lever in the Game view. You can see in this example that the AnalogPinModes Element 0 has been set to INPUT.
@@ -86,7 +86,7 @@ Open the ReadAnalogVoltage scene and press the play button. Turning the potentio
 The component used for logic in this example, ReadVoltageOnScreen, is coded in C# rather than javascript. 
 
 
-##Fourth Example - Servo Knob
+## Fourth Example - Servo Knob
 The fourth example, in a scene called ServoKnob, demonstrates how to send arbitrary messages to the Arduino, and how to modify the Arduino program to execute more complex code. This example is based on the ServoKnob example from the Arduino IDE, however, there is a difference. The servo is controlled from a lever in the game screen rather than from a physical potentiometer.
 
 The process of moving a servo is more complicated than blinking a light, so we need to use an Arduino library for control. That process is more complex than simply writing to a pin, we need to do servo setup and write an angle value to the created software servo object. To do this, the base Arduino sketch has been modified to allow two custom messages to be sent from Unity. One tells the Arduino which pin the servo is attached to, the other tells what angle the servo should be set to.
@@ -96,7 +96,7 @@ To run this scene, open the ArduinitySerialWithServoFunction program and upload 
 After the Arduino and the circuit are setup, press play with the ServoKnob scene open in Unity. The lever should move servo between 0 and 180 degrees.
 
 
-##Troubleshooting
+## Troubleshooting
 How do I get more information about what's wrong?
 There are two commented defines at the top of the Arduinity.cs file. Change the line 
 
